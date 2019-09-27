@@ -16,10 +16,12 @@ export const FlipBox: React.FC<{ flipId: string } & BoxProps> = props => {
 }
 
 export function fadeIn(el: HTMLElement) {
+  if (el.animate == null) return
   el.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 250, delay: 250, fill: "forwards" })
 }
 
 export function fadeOut(el: HTMLElement, idx: number, end: () => void) {
+  if (el.animate == null) return end()
   el.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 250 })
     .finished.then(end)
     .catch(() => {})
