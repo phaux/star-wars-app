@@ -1,5 +1,8 @@
 # Star Wars App
 
+[![Travis](https://img.shields.io/travis/phaux/star-wars-app)](https://travis-ci.org/phaux/star-wars-app)
+[![Codecov](https://img.shields.io/codecov/c/gh/phaux/star-wars-app)](https://codecov.io/gh/phaux/star-wars-app)
+
 ## 💡 Developing
 
 Run `npm start` to start development server.
