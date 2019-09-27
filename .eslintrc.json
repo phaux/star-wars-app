@@ -1,0 +1,49 @@
+{
+  "env": {
+    "browser": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
+    "prettier",
+    "prettier/react",
+    "prettier/@typescript-eslint"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/member-ordering": "error",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-floating-promises": "error",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/no-use-before-define": "off",
+    "@typescript-eslint/prefer-readonly": "error",
+    "@typescript-eslint/restrict-plus-operands": "error",
+    "@typescript-eslint/strict-boolean-expressions": ["error", { "ignoreRhs": true }],
+    "eqeqeq": ["error", "smart"],
+    "id-length": "error",
+    "import/no-anonymous-default-export": "error",
+    "import/no-unused-modules": "error",
+    "lines-between-class-members": ["warn", "always", { "exceptAfterSingleLine": true }],
+    "no-else-return": "error",
+    "no-extra-boolean-cast": "off",
+    "no-implicit-coercion": "error",
+    "no-var": "error",
+    "prefer-const": "error",
+    "react/prop-types": "off",
+    "require-unicode-regexp": "error",
+    "yoda": "error"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}
