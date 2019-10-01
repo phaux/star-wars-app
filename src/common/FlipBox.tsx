@@ -20,9 +20,14 @@ export function fadeIn(el: HTMLElement) {
   el.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 250, delay: 250, fill: "forwards" })
 }
 
-export function fadeOut(el: HTMLElement, idx: number, end: () => void) {
+export async function fadeOut(el: HTMLElement, idx: number, end: () => void) {
   if (el.animate == null) return end()
-  el.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 250 })
-    .finished.then(end)
-    .catch(() => {})
+  const animation = el.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 250 })
+  if (animation.finished != null) {
+    await animation.finished
+  }
+  if (animation.onfinish != null) {
+    await new Promise(resolve => animation.addEventListener("finish", resolve))
+  }
+  end()
 }
