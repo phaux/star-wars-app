@@ -1,4 +1,4 @@
-import { AppBar, Container, Tab, Tabs } from "@material-ui/core"
+import { AppBar, Container, Tab, Tabs, Box } from "@material-ui/core"
 import * as React from "react"
 import { useHistory, useParams } from "react-router-dom"
 import SwipeableViews from "react-swipeable-views"
@@ -23,16 +23,16 @@ export const AppScreen: React.FC = () => {
         index={SCREENS.indexOf(params.screen as any)}
         onChangeIndex={(ev, idx) => history.push(`/${SCREENS[idx]}`)}
       >
-        <div>
+        <Box overflow="hidden">
           <Container maxWidth="md">
             <PeopleScreen />
           </Container>
-        </div>
-        <div>
+        </Box>
+        <Box overflow="hidden">
           <Container maxWidth="md">
             <StarshipsScreen />
           </Container>
-        </div>
+        </Box>
       </SwipeableViews>
     </>
   )
