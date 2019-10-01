@@ -17,7 +17,7 @@ afterAll(() => {
 })
 
 it("completes single game flow", async () => {
-  const { queryByText, findByText, container } = render(
+  const { queryByText, findByText } = render(
     <Board
       component={({ item, onSelect }) => <button onClick={onSelect}>{item.name}</button>}
       data={mockData}
@@ -31,8 +31,6 @@ it("completes single game flow", async () => {
 
   await findByText(firstMessage)
   expect(queryByText(secondMessage)).toBeFalsy()
-
-  // console.log(container.innerHTML)
 
   fireEvent.click(queryByText(mockData[0].name)!)
   // should advance to second step
